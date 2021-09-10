@@ -3,13 +3,18 @@ import sys
 import pygame
 import random
 from os import environ
+from pygame.locals import *
 #
 
 WIDTH_GAMEBOARD = 1250
 HEIGHT_GAMEBOARD = 600
 size = (WIDTH_GAMEBOARD, HEIGHT_GAMEBOARD) # размер окна
 environ['SDL_VIDEO_CENTERED'] = '1'
-screen = pygame.display.set_mode(size) # основное окно
+flags = DOUBLEBUF
+# screen = pygame.display.set_mode(resolution, flags, bpp)
+# pygame.mixer.init()
+screen = pygame.display.set_mode(size, flags)
+# screen = pygame.display.set_mode(size) # основное окно
 pygame.display.set_caption("Моя вторая игра на Python. Ворожцов А.В.")
 
 explosion_group = pygame.sprite.Group()
